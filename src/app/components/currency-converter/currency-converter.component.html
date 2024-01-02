@@ -1,0 +1,47 @@
+<div class="row mb-5">
+    <div class="col-12 text-center text-md-center title">
+        <!-- &copy; 2015 example.com. All rights reserved. -->
+        Currency Converter
+    </div>
+</div>
+
+<div class="section section-calculator">
+    <form [formGroup]="form" id="currency-conversion">
+        <div class="input-group-wrapper">
+            <div class="input-group">
+                <div class="label-wrapper">
+                    <label for="amount">Amount</label>
+                </div>
+                <input type="text" class="input-section" id="amount" formControlName="amount" dir="ltr"
+                    placeholder="Enter Amount" autocomplete="off" aria-label="amount" (keyup)="onKeyup()">
+            </div>
+            <div class="input-group">
+                <div class="label-wrapper">
+                    <label for="fromCurrency">From</label>
+                </div>
+                <select id="fromCurrency" class="input-section" id="fromCurrency" formControlName="fromCurrency"
+                    (change)="onSelect()">
+                    <option *ngFor="let item of rates" [ngValue]="item.name">
+                        {{item.name}}
+                    </option>
+                </select>
+            </div>
+            <div class="input-group">
+                <div class="label-wrapper">
+                    <label for="toCurrency">To</label>
+                </div>
+                <select id="toCurrency" class="input-section" id="toCurrency" formControlName="toCurrency"
+                    (change)="onSelect()">
+                    <option *ngFor="let item of rates" [ngValue]="item.name">
+                        {{item.name}}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="row pt-1">
+            <div class="col-12 text-center text-md-center result">
+                {{result}}
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,29 @@
+<div class="container-fluid h-100">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light float-right">
+
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
+      aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">
+
+    </a>
+    <div class="collapse navbar-collapse" id="navbarToggler">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="converter">Currency Converter</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="about">About</a>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+
+  <ngx-spinner name="detailsSpinner">
+    <p>Loading data</p>
+  </ngx-spinner>
+
+  <router-outlet></router-outlet>
